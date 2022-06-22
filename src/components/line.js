@@ -75,10 +75,13 @@ class DefaultStyleService extends EdgeService {
     super(xstep, ystep)
   }
 
+  // 根据起始位置，返回绘制路径path
   drawEdge (start, end) {
+    // y轴相同，画横线
     if (start.y === end.y) {
       return this.drawHEdge(start, end)
     }
+    // x轴相同，画竖线
     if (start.x === end.x) {
       return this.drawVerticalEdge(start, end)
     }

@@ -1,0 +1,7 @@
+<svg width="500" height="500" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+  <g id="cc">
+    <rect width="100" height="100" x="20" y="20" />
+  </g>
+  <use xlink:href="#cc" transform="translate(160,0)" fill="red"/>
+</svg>

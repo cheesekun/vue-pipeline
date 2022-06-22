@@ -25,7 +25,7 @@ class Pipeline {
     this.sortedList = this.topologicalSorting()
     this.matrix = [] // 存放各个顶点的相对坐标
     for (let i = 0; i < nodes.length; i++) {
-      this.matrix[i] = []
+      this.matrix[i] = [] // 相当于构建了一个二维数组，
     }
     this.width = 0
     this.height = 0

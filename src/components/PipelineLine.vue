@@ -10,6 +10,7 @@ export default {
     path: {
       type: String
     },
+    // 线的颜色
     weight: {
       type: Number,
       default: 0

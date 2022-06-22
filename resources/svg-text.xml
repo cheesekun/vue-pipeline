@@ -1,0 +1,20 @@
+<svg width="500" height="500" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+  <!-- 1: 理论上svg并不是一个专业处理文字的载体 -->
+  <!-- 2: style标签可以使用大部分css属性啦, 不用要px -->
+  <!-- 3: xy对应的是左下角的基线, 而不是完美的左下角 -->
+  <!-- 4: 文字的颜色也要放在fill属性里面, 这也更符合工程化 -->
+  <text x="0" y="200" style="font-size:26;" fill="red">蚊子蚊子1</text>
+  <!-- 5: 针对里面每一个字符设置距离 -->
+  <!-- dx dy 具体到每个文字的距离 -->
+  <!-- 那么我其实可以巧用svg来搞点花里胡哨的 -->
+  <!-- 用波浪形画个❤ -->
+  <!-- 再加上动画效果, 就是扭动起来的文字啦 -->
+  <text x="200" y="300" dx="0 20 60" dy="0 20 40" style="font-size:26;" fill="blue">蚊子蚊子2</text>
+
+  <!-- tspan标签对文字的单独处理(含镂空!!!!) -->
+  <text x="200" y="100" style="font-size:40">
+    <tspan fill="red">蚊子3</tspan>
+    <tspan stroke="blue" fill="none">蚊子4</tspan>
+    </text>
+</svg>

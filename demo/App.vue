@@ -10,33 +10,33 @@
         <el-row>
           <el-col :span="12">
             <el-form-item label="x">
-              <el-input v-model="form.x"></el-input>
+              <el-input-number v-model="form.x" @change="fresh"></el-input-number>
             </el-form-item>
 
           </el-col>
           <el-col :span="12">
             <el-form-item label="y">
-              <el-input v-model="form.y"></el-input>
+              <el-input-number v-model="form.y" @change="fresh"></el-input-number>
             </el-form-item>
           </el-col>
         </el-row>
         <el-row>
           <el-col :span="12">
             <el-form-item label="X step">
-              <el-input v-model="form.xstep" type="number"></el-input>
+              <el-input-number v-model="form.xstep" type="number" @change="fresh"></el-input-number>
             </el-form-item>
 
           </el-col>
           <el-col :span="12">
             <el-form-item label="Y step">
-              <el-input v-model="form.ystep"></el-input>
+              <el-input-number v-model="form.ystep" @change="fresh"></el-input-number>
             </el-form-item>
 
           </el-col>
         </el-row>
 
         <el-form-item label="Show Arrow">
-          <el-switch v-model="form.showArrow"></el-switch>
+          <el-switch v-model="form.showArrow" @change="fresh"></el-switch>
         </el-form-item>
 
         <el-form-item label="Line Style">
@@ -47,7 +47,7 @@
           </el-radio-group>
         </el-form-item>
         <el-form-item label="Samples">
-          <el-radio-group v-model="form.data" @input="fresh">
+          <el-radio-group v-model="form.data" @change="fresh">
             <el-radio :label="0">HUE 1 </el-radio>
             <el-radio :label="1">HUE 2</el-radio>
             <el-radio :label="2">Tree</el-radio>
@@ -57,8 +57,8 @@
         </el-form-item>
         <el-form-item label="Add Line">
           <div class="addline">
-            <el-input v-model="form.from" hint="from"></el-input>
-            <el-input v-model="form.to"></el-input>
+            <el-input-number v-model="form.from" hint="from"></el-input-number>
+            <el-input-number v-model="form.to"></el-input-number>
             <el-button type="primary" @click="addLine">Add</el-button>
           </div>
         </el-form-item>
@@ -72,11 +72,20 @@
     <div class="msg"> You selected :{{msg}}</div>
     <el-tabs v-model="tab" type="card">
       <el-tab-pane label="Pipeline" name="pipeline">
-        <vue-pipeline ref="pipeline" :x="form.x" :y="form.y" :data="dataLocale" :showArrow="form.showArrow"
-          :ystep="form.ystep" :xstep="form.xstep" :lineStyle="form.lineStyle" @select="handleSelect" />
+        <vue-pipeline
+          ref="pipeline"
+          :x="form.x"
+          :y="form.y"
+          :data="dataLocale"
+          :showArrow="!!form.showArrow"
+          :ystep="form.ystep"
+          :xstep="form.xstep"
+          :lineStyle="form.lineStyle"
+          @select="handleSelect" />
       </el-tab-pane>
       <el-tab-pane label="Data" name="data">
-        {{dataLocale}}
+        <!-- {{dataLocale}} -->
+        <JsonViewer :value="dataLocale" expanded />
       </el-tab-pane>
 
     </el-tabs>
@@ -91,6 +100,7 @@
 // import hue from "./hue.vue";
 import { hue1, hue3, sample, sample3, sample2, bug } from './data.js'
 import { ref, reactive, onMounted } from 'vue'
+
 export default {
   name: 'app',
   setup () {

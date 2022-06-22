@@ -1,0 +1,13 @@
+<!-- 1: 视野 -->
+<!-- viewBox: 我能看到哪一部分, 当前就是左上角 -->
+<!-- viewBox就算小了, 但是整体的宽高是不变的, 所以会有放大缩小效果 -->
+<!-- 2: 如果viewport和viewBox的宽高比不相同。你需要自己来指定如何在SVG阅读器（如浏览器）中显示SVG图像。你可以在<svg>中使用preserveAspectRatio属性来指定。 -->
+<!-- preserveAspectRatio   meet就是保持原比例不失真-->
+<svg width="500" height="500" version="1.1"
+xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" preserveAspectRatio="none meet">
+  <rect
+    width="200" height="200"
+    style="x:20; y:20; rx:20;ry:60; fill:rgb(0,0,255);stroke-width:16;
+  stroke:black"/>
+
+</svg>

@@ -1,0 +1,26 @@
+<!-- 1: 整体的长宽, 规则定义  -->
+<svg width="500" height="500" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+  <!-- 1：矩形 -->
+  <!-- x, y 左上角的位置 -->
+  <!-- fill: 填充的颜色 -->
+  <rect  width="100" height="100" style="x:20; y:20;" />
+
+  <!-- 1：圆形 -->
+  <!-- 2: cx,cy 圆心的坐标 -->
+  <!-- 3: r半径 -->
+  <circle cx="70" cy="220" r="50" fill="red"></circle>
+
+
+  <!-- 3: 直线 -->
+  <!-- 两个点的坐标 -->
+  <line x1="160" y1="80" x2="300" y2="80" style="stroke:green;stroke-width:16;"></line>
+
+  <!-- 4: 多点线 -->
+  <!-- 会自动把第一个点与最后一个点连接起来 -->
+  <!-- points:一组一组的xy坐标 -->
+  <polyline points="500,60 330,60 420,180"></polyline>
+
+  <!-- 5: 多边形 -->
+  <polygon points="470,400 450,320 410,320 410,340 410,440" style="fill:red;stroke:red;stroke-width:2"></polygon>
+</svg>

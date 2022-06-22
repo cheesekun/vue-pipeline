@@ -7,8 +7,14 @@
       </marker>
     </defs>
 
-    <pipeline-line v-for="(item,index) in lineList" :key="'line'+index" :showArrow="showArrow" :path="item.path"
-      :weight="item.weight" :lineStyle="lineStyle" :ystep="ystep"/>
+    <pipeline-line
+      v-for="(item,index) in lineList"
+      :key="'line'+index"
+      :showArrow="showArrow"
+      :path="item.path"
+      :weight="item.weight"
+      :lineStyle="lineStyle"
+      :ystep="ystep"/>
     <pipeline-node v-for="(item,idx) in nodeList" :key="'node'+idx" :hint="item.hint" :status="item.status"
       :label="item.name" :x="item.x" :y="item.y" :node="item" :index="idx" :selected="selectedList[idx]"
       @click="handleClick" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave"/>

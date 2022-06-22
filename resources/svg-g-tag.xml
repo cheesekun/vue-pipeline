@@ -1,0 +1,17 @@
+<!-- 1: <g>标签分组了, 就有面向对象的概念了 -->
+<svg width="500" height="500" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+<!-- 定义了整体的属性 -->
+<!-- 2: 可以多层嵌套替换 -->
+  <g style="fill:rgb(0,0,255);stroke-width:16;stroke:green;">
+    <rect
+      width="100" height="100"
+      style="x:20; y:20; rx:20;ry:60;
+    "/>
+
+    <rect
+      width="100" height="100"
+      style="x:20; y:140; rx:20;ry:60;
+    stroke:black"/>
+  </g>
+</svg>
