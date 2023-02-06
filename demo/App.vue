@@ -98,8 +98,8 @@
 
 <script>
 // import hue from "./hue.vue";
-import { hue1, hue3, sample, sample3, sample2, bug } from './data.js'
-import { ref, reactive, onMounted } from 'vue'
+import { hue3, sample, sample3, sample2, bug } from './data.js'
+import { ref, reactive } from 'vue'
 
 export default {
   name: 'app',
@@ -107,7 +107,7 @@ export default {
     const tab = ref('pipeline')
     const pipeline = ref('')
     const dataLocale = ref([])
-    dataLocale.value = hue1.nodes
+    dataLocale.value = sample.nodes
     const msg = ref('')
     const formulary = ref('')
     const form = ref(reactive({
@@ -115,7 +115,7 @@ export default {
       y: 55,
       xstep: 120,
       ystep: 70,
-      data: 0,
+      data: 2,
       showArrow: true,
       lineStyle: 'default',
       from: 0,
@@ -153,10 +153,10 @@ export default {
     const handleSelect = (node) => {
       msg.value = `{ ${node.name} }`
     }
-    onMounted(() => {
-      dataLocale.value = hue1.nodes
-      console.log(dataLocale)
-    })
+    // onMounted(() => {
+    //   dataLocale.value = hue1.nodes
+    //   console.log(dataLocale)
+    // })
     return {
       tab,
       dataLocale,

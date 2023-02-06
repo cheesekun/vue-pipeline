@@ -18,10 +18,6 @@ export default {
     showArrow: {
       type: Boolean,
       default: false
-    },
-    ystep: {
-      type: Number,
-      default: 30
     }
   },
   setup (props) {

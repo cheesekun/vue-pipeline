@@ -98,6 +98,7 @@ class Pipeline {
       if (!node.next) {
         continue
       }
+      // 根据节点的next 进行线的绘制
       for (let j = 0; j < node.next.length; j++) {
         const edge = node.next[j]
         const child = this.nodes[edge.index]

@@ -59,6 +59,7 @@ export class EdgeService {
 
   /**
    * 生成直线的指令
+   * TODO: 这块节点的x，y，应该是由前端根据节点进行计算得出，而不应该自定义
    * @param {*} start
    * @param {*} end
    */
